@@ -3,7 +3,7 @@ import api from './modules/api'
 const store = {
   seq: 0,
   words: [],
-  status: 'todo', // ['default', 'todo', 'doing', 'done']
+  status: 'todo', // ['todo', 'doing', 'done']
   score: () => {
     return store.words.filter(r => r.time > -1).length
   },

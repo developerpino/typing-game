@@ -8,8 +8,14 @@ const game = {
     game.bindEvents()
   },
   methods: {
+    reset:() => {
+      document.getElementById('wordArea').innerHTML = '문제 단어'
+      document.getElementById('gameScore').innerHTML = '-'
+      document.getElementById('gameSecond').innerHTML = '-'
+      document.getElementById('answerInput').focus()
+    },
     start: () => {
-      document.getElementById('wordArea').innerHTML = store.words[store.seq].text || 'ERROR'
+      document.getElementById('wordArea').innerHTML = store.words[store.seq].text
       document.getElementById('gameScore').innerHTML = store.score()
       document.getElementById('answerInput').focus()
       game.methods.tick(store.words[store.seq].second || 0)
@@ -47,17 +53,18 @@ const game = {
       }
     },
     set: (btnElement) => {
-      if (store.status==='todo' || store.status==='default') {
-        if (store.status==='default') {
-          clearTimeout(clock)
-          store.restart()
-        }
+      if (store.status==='todo') {
         store.status = 'doing'
-        btnElement.innerHTML = '시작'
+        btnElement.innerHTML = '초기화'
         game.methods.start()
       } else {
-        store.status = 'default'
-        btnElement.innerHTML = '초기화'
+        if (store.status==='doing') {
+          clearTimeout(clock)
+          store.restart()
+          game.methods.reset()
+        }
+        store.status = 'todo'
+        btnElement.innerHTML = '시작'
       }
     }
   },

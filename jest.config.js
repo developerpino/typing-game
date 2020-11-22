@@ -1,11 +1,12 @@
 module.exports = {
-  moduleFileExtensions: ["js"],
+  moduleFileExtensions: ["js", "html"],
   transform: {
-      '^.+\\.(js)?$': 'babel-jest'
+    '^.+\\.js?$': 'babel-jest',
+    '^.+\\.html$': 'html-loader-jest'
   },
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
-      '^@/(.*)$': '<rootDir>/$1'
+    '^@/(.*)$': '<rootDir>/$1'
   },
   testMatch: [
     '<rootDir>/tests/*.spec.js'
