@@ -57,6 +57,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './public'),
-    publicPath: './public'
+    publicPath: '/typing-game/public/'
   }
 };
