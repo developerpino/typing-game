@@ -1,0 +1,56 @@
+body {
+  color: #FFF;
+  font-weight: bold;
+}
+#app {
+  width: 939px;
+  height: 996px;
+  padding: 30px;
+  background-image: url('/static/background.png');
+}
+#title {
+  width: 845px;
+  height: 100px;
+  margin-left: 20px
+}
+#content {
+  width: 680px;
+  height: 400px;
+  margin: 120px 0 0 100px
+}
+.button {
+  background: #3498db;
+  width: 180px;
+  padding: 10px 0;
+  border-radius: 3px;
+}
+.button:hover {
+ cursor: pointer;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+#wordArea {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 30pt
+}
+#inputArea {
+  text-align: center;
+  margin-top: 80px;
+}
+#answerInput {
+  height: 30px;
+}
+#btnArea {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.defaultRow {
+  text-align: center;
+  margin-top: 80px;
+}
